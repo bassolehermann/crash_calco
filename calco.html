@@ -1,0 +1,153 @@
+
+
+<html>
+    <head>
+        <meta charset=utf-8" />
+        <title>Calculatrice Crash</title>
+        <link rel="stylesheet" type="text/css" href="css/calco.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="css/bootstrap.min.js"></script>
+
+        <script language="JavaScript">
+
+function verification(entree) {
+  var car ="1234567890[]()+-.*,/";
+  for (var i = 0; i < entree.length; i++)
+   if (car.indexOf(entree.charAt(i))<0 ) return false;
+  return true;
+ }
+
+ function calcul() {
+   var a = 0;
+  if (verification(window.document.calculatrice.result.value))
+     a = eval(window.document.calculatrice.result.value);
+   window.document.calculatrice.result.value = a;
+ }
+
+ function ajouter(caracteres) {
+   window.document.calculatrice.result.value =
+   window.document.calculatrice.result.value + caracteres;
+ }
+
+ function fonction_speciale(fonction) {
+   if (verification(window.document.calculatrice.result.value)) {
+     if(fonction == "sqrt") {
+       var a = 0;
+     a = eval(window.document.calculatrice.result.value);
+     window.document.calculatrice.result.value = Math.sqrt(a);
+   }
+   if(fonction == "pow") {
+     var a = 0;
+     a = eval(window.document.calculatrice.result.value);
+     window.document.calculatrice.result.value = a * a;
+   }
+   
+  } else window.document.calculatrice.result.value = 0
+}
+
+</script>
+    </head>
+
+</head>
+<body  >
+
+<form name="calculatrice" action="" onSubmit="calcul(); return false;">
+<table style="background: #1C2833"   class="calculatrice">
+<tr>
+  
+    <td>
+      <div>
+             <h1 style="text-align: center; color: white; font-family: sans comic; " class="header">CRASH CALCO</h1>
+
+      </div>
+      <input style=" text-align: right; width: 320px; height: 50px;font-size: 30px; " type="text " name="result">
+    </td>
+</tr>
+
+                        <tr>
+                              <td class="">
+                                          <table style="background: #1C2833; border:0"  class="calculatrice">
+                                                  
+                                                  
+
+                                                      <tr>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="reset" class="calc_btn" name="b17" value="ON/C"  />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" value="sqrt " onClick="fonction_speciale('sqrt')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" value="%" onClick="ajouter('%')"/>
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" value="+" onClick="ajouter('+')"/>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b2" value="7" onClick="ajouter('7')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b3" value="8" onClick="ajouter('8')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b4" value="9" onClick="ajouter('9')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" name="b13" value="-" onClick="ajouter('-')" />
+                                                          </td>
+                                                      </tr>
+                                                                  <tr>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b5" value="4" onClick="ajouter('4')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b6" value="5" onClick="ajouter('5')"/>
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b7" value="6" onClick="ajouter('6')"/>
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" name="b11" value="x" onClick="ajouter('*')" />
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn"  name="b8" value="1" onClick="ajouter('1')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b9" value="2" onClick="ajouter('2')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b10" value="3" onClick="ajouter('3')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" name="b12" value=":" onClick="ajouter('/')" />
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b14" value="0" onClick="ajouter('0')" />
+                                                          </td>
+                                                         
+                                                          <td class="calc_td_btn">
+                                                                  <input type="button" class="calc_btn" name="b15" value="." onClick="ajouter('.')" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: ##CACFD2;" type="button" class="calc_btn" name="b18" value="=" onClick="calcul()" />
+                                                          </td>
+                                                          <td class="calc_td_btn">
+                                                                  <input style="background: #E67E22;" type="button" class="calc_btn" value="^" onClick="fonction_speciale('pow')" />
+                                                          </td>
+                                                      </tr>
+
+                                          </table>
+                              </td>
+                      </tr>
+                      </table>
+</form>
+
+
+</body>
+</html>
